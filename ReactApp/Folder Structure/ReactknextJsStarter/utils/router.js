@@ -1,0 +1,32 @@
+const dashboardRoute = '/dashboard'
+
+const router = {
+  LOGIN: '/login',
+  SIGNUP: '/signup',
+  FORGOTPASS: '/forgot-password',
+  LISTYOURBOAT: '/list-your-boat',
+  PROFILE: '/profile',
+  HOME: '/',
+  RESETPASS: '/reset-password/[token]',
+  PAYOUTPREFERENCES: '/payout-preferences',
+  NOTIFICATION: '/notifications',
+  PAYMENTMETHODS: '/payment-methods',
+  CHANGEPASS: '/change-password',
+  BOATREGISTRATIONONE: '/boat-registration-one',
+  BOATREGISTRATIONTWO: '/boat-registration-two',
+  BOATREGISTRATIONTHREE: '/boat-registration-three',
+  SEARCHBOAT: '/search-result',
+  DASHBOARD: dashboardRoute,
+  BOATLISTING: dashboardRoute + '/boat-listing',
+  DOCUMENTS: dashboardRoute + '/documents',
+  CALENDAR: dashboardRoute + '/calendar',
+  BOOKING: dashboardRoute + '/booking/',
+  INBOX: dashboardRoute + '/inbox',
+  BOATDETAIL: '/boat-detail/',
+  SAVEDBOAT: '/saved-boat',
+  PASTUPCOMINGTRIP: '/trips',
+  OWNERPROFILE: '/owner-profile',
+  PERFORMANCEREVIEW: dashboardRoute + '/performance/review',
+  PERFORMANCEARNING: dashboardRoute + '/performance/earnings',
+}
+export default router

@@ -1,0 +1,57 @@
+{
+  "window.zoomLevel": 0,
+  // "workbench.iconTheme": "material-icon-theme",
+  // "workbench.colorTheme": "One Monokai",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#333333",
+    "statusBar.noFolderBackground": "#333333",
+    "statusBar.debuggingBackground": "#263238"
+  },
+  "editor.fontSize": 16,
+  "editor.minimap.enabled": true,
+  "explorer.confirmDelete": false,
+  "terminal.integrated.rendererType": "dom",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  // "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  // "eslint.format.enable": true,
+  "eslint.codeActionsOnSave.mode": "all",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.jsxBracketSameLine": true,
+  "cSpell.userWords": ["Headert", "Insta", "glambu"],
+  "javascript.format.enable": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "beautify.ignore": ["**/*.js", "**/*.jsx"],
+  "workbench.startupEditor": "newUntitledFile",
+  "yaml.schemas": {
+    "file:///Users/darshan/.vscode/extensions/atlassian.atlascode-2.8.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.bitbucket.enabled": true,
+  "atlascode.jira.jqlList": [
+    {
+      "id": "1b085f95-4344-4d58-b18f-94dc9494fbb6",
+      "enabled": true,
+      "name": "My feetfinder Issues",
+      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+      "siteId": "864d7520-a01a-4ec0-99af-975238a891e9",
+      "monitor": true
+    }
+  ],
+  "breadcrumbs.enabled": true,
+  "editor.wordWrap": "on",
+  "atlascode.jira.lastCreateSiteAndProject": {
+    "siteId": "864d7520-a01a-4ec0-99af-975238a891e9",
+    "projectKey": "PWA"
+  },
+  "cSpell.language": "en,en-GB"
+}

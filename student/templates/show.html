@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display Student Data</title>
+    <style>
+        table, tr, td{
+        border : 1px solid grey;
+        }
+    </style>
+</head>
+
+<body>
+<h1 align="center">Display Student Result</h1>
+<table align="center">
+
+    <thead>
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Subject 1</td>
+        <td>Subject 2</td>
+        <td>Subject 3</td>
+        <td>Subject 4</td>
+        <td>Subject 5</td>
+        <td>Total</td>
+        <td>Average</td>
+        <td>Inserted</td>
+        <td>Updated</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+    <tr>
+        <td>{{student.FirstName}}</td>
+        <td>{{student.LastName}}</td>
+        <td>{{student.Sub1}}</td>
+        <td>{{student.Sub2}}</td>
+        <td>{{student.Sub3}}</td>
+        <td>{{student.Sub4}}</td>
+        <td>{{student.Sub5}}</td>
+        <td>{{student.sum}}</td>
+        <td>{{student.avg}}</td>
+        <td>{{student.inserted}}</td>
+        <td>{{student.updated}}</td>
+        <td>
+            <a href="/edit/{{student.pk}}">Update</a>
+        </td>
+
+        <td>
+            <a href="/delete/{{student.pk}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+     <p>
+        <a href="{% url 'insert-result' %}">Insert New Result</a>
+     </p>
+</body>
+</html>

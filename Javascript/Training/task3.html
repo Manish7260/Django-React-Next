@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Task 3</title>
+    </head>
+
+    <body>
+        <form>
+            Price : <input type="number" oninput="calculate()" id="price"> X
+            Qty : <input type="number" oninput="calculate()" id="qty">
+        </form>
+        <p id="total"></p>
+
+        <script>
+            function calculate()
+            {
+                var price = document.getElementById("price").value;
+                var qty = document.getElementById("qty").value;
+
+                document.getElementById("total").innerHTML = price*qty
+            }
+        </script>
+    </body>
+</html>

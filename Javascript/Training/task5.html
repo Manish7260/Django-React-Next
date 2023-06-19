@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Task 5 
+        </title>
+    </head>
+
+    <body>
+        <select id="dropdown" onchange="changeOption()">
+            <option value="temprature">Temprature</option>
+            <option value="time">Time</option>
+        </select>
+
+        <form>
+            <p id="firstlabel">Celsius : </p>
+            <input type="number" oninput="toFahrenhit()"  id="firstInput">
+
+            <p id="secondlabel">Fahrenhit : </p>
+            <input type="number" oninput="toCelsius()" id="secondInput">
+        </form>
+
+        <script>
+            function changeOption()
+            {
+
+                var option = document.getElementById("dropdown").value;
+                var first = document.getElementById("firstInput");
+                var second = document.getElementById("secondInput");
+
+                // if (option =="temprature")
+                // {
+                //     document.getElementById("firstlabel").innerHTML = "Celsius : ";
+                //     document.getElementById("secondlabel").innerHTML = "Fahrenhit : ";
+                //     first.oninput = toFahrenhit;
+                //     second.oninput = toCelsius;
+                //     first.value = second.value = 0;
+                // }
+                // else{
+                //     document.getElementById("firstlabel").innerHTML = "Second : ";
+                //     document.getElementById("secondlabel").innerHTML = "Minute : ";
+                //     first.oninput = toMinute;
+                //     second.oninput = toSecond;
+                //     first.value = second.value = 0;
+                // }
+
+                switch (option)
+                {
+                    case ("temprature"):
+                        document.getElementById("firstlabel").innerHTML = "Celsius : ";
+                        document.getElementById("secondlabel").innerHTML = "Fahrenhit : ";
+                        first.oninput = toFahrenhit;
+                        second.oninput = toCelsius;
+                        first.value = second.value = 0;
+                        break;
+                    case ("time"):
+                        document.getElementById("firstlabel").innerHTML = "Second : ";
+                        document.getElementById("secondlabel").innerHTML = "Minute : ";
+                        first.oninput = toMinute;
+                        second.oninput = toSecond;
+                        first.value = second.value = 0;
+                        break;
+                }
+
+                
+
+            }
+
+            function ParseFloat(str,val) {
+                str = str.toString();
+                str = str.slice(0, (str.indexOf(".")) + val + 1);
+                return Number(str);
+            }
+
+            function toCelsius()
+            {
+                let fahrenhit = document.getElementById("secondInput").value;
+                let celsius = (fahrenhit-32)/(9/5);
+                document.getElementById("firstInput").value = ParseFloat(celsius,4);
+            }
+
+            function toFahrenhit()
+            {
+                let celsius = document.getElementById("firstInput").value;
+                let fahrenhit = (celsius*(9/5))+32;
+                document.getElementById("secondInput").value = ParseFloat(fahrenhit,4);
+            }
+
+            function toSecond()
+            {
+                let minute = document.getElementById("secondInput").value;
+                let second = minute*60;
+                document.getElementById("firstInput").value = second;
+            }
+
+            function toMinute()
+            {
+                let second = document.getElementById("firstInput").value;
+                let minute = second/60;
+                document.getElementById("secondInput").value = minute;
+            }
+        </script>
+    </body>
+</html>

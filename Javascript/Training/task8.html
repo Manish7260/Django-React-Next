@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 8</title>
+        <style>
+            .demo
+            {   
+                padding: 30px;
+                background-color: black;
+                width: 240px;
+                height: 80px;
+                display: flex;
+                justify-content: space-between; 
+                align-items: center;
+                border-radius: 30px;
+            }
+            .minus{
+                width: 70px;
+                height: 70px;
+            }
+            .plus{
+                width:70px;
+                height: 70px;
+                border-radius: 15px solid black;
+            }
+            .text
+            {
+                width: 70px;
+                color: white;
+                text-align: center;
+                font-size: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="demo">
+
+            <button class="minus" onclick="decrease()">-</button>
+            <p class="text" id="text">0</p>
+            <button class="plus" onclick="increase()">+</button>
+        </div>
+
+        <script>
+            function increase()
+            {
+                var item = document.getElementById("text").innerHTML;
+                item = parseInt(item)+1;
+                console.log(item);
+                document.getElementById("text").innerHTML = item; 
+            }
+
+            function decrease()
+            {
+                var item = document.getElementById("text").innerHTML;
+                item = parseInt(item)-1;
+                document.getElementById("text").innerHTML = item; 
+            }
+        </script>
+    </body>
+</html>

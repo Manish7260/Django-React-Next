@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 6</title>
+
+        <style>
+            .display{
+                width: 100px;
+                height: 50px;
+            }
+            .red{
+                background-image: linear-gradient(to right, darkred , #FF0000);
+                color: none;
+                width: 250px;
+                height: 20px;
+            }
+
+            .green{
+                background-image: linear-gradient(to right, rgb(2, 44, 5) , #00FF00);
+                width: 250px;
+                height: 20px;
+            }
+            .blue{
+                background-image: linear-gradient(to right, rgb(12, 2, 66) , #0000FF);
+                width: 250px;
+                height: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+      
+        <form>
+            <table>
+                <tr>
+                    <td><input type="number" id="redinput" oninput="changeColorRange()" value="0"></td>
+                    <td><div class="red">
+                        <input type="range" id="red" value="0" min="0" max="255" oninput="changeColor()" style="width: 250px; opacity: 0.3;">  
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="greeninput" oninput="changeColorRange()" value="0"></td>
+                    <td><div class="green">
+                        <input type="range" id="green" value="0" min="0" max="255" oninput="changeColor()" style="width: 250px; opacity: 0.3;">  
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="blueinput" oninput="changeColorRange()" value="0"></td>
+                    <td><div class="blue">
+                        <input type="range" id="blue" value="0" min="0" max="255" oninput="changeColor()" style="width: 250px; opacity: 0.3;">  
+                    </div></td>
+                </tr>
+            </table>
+        </form>
+
+        <br>
+
+        <div class="display" id="display"> 
+            6456456456
+        </div>
+
+        <script>
+            function changeColor()
+            {
+                var red = document.getElementById("red").value;
+                var green = document.getElementById("green").value;
+                var blue = document.getElementById("blue").value;
+
+                document.getElementById("redinput").value = red;
+                document.getElementById("greeninput").value = green;
+                document.getElementById("blueinput").value = blue;
+
+                var color = "rgb("+red.toString()+","+green.toString()+","+blue.toString()+")";
+
+                document.getElementById("display").style.backgroundColor =color;
+            }
+
+            function changeColorRange()
+            {
+                var red = document.getElementById("redinput").value;
+                var green = document.getElementById("greeninput").value;
+                var blue = document.getElementById("blueinput").value;
+
+                document.getElementById("red").value = red;
+                document.getElementById("green").value = green;
+                document.getElementById("blue").value = blue;
+
+                var color = "rgb("+red.toString()+","+green.toString()+","+blue.toString()+")";
+
+                document.getElementById("display").style.backgroundColor = color;
+            }
+        </script>
+    </body>
+</html>

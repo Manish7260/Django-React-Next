@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver</title>
+</head>
+<body>
+<p>Driver</p>
+
+<div>
+    <table border="1px solid grey" >
+        <tr>
+            <th>Requests</th>
+            <th>Accept</th>
+        </tr>
+        <tr>
+            <td><p id="message"></p></td>
+            <td><a href="{% url 'ride-page' %}" id="accept" style="display:none" target="_blank">Accept</a></td>
+        </tr>
+    </table>
+</div>
+
+<div style="margin-top : 100px">
+    <table border="1px solid grey" >
+        <tr>
+            <td style="padding:5px;">Status</td>
+            <td style="padding:5px;"><p id="status">None</p></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+	const ws= new WebSocket("ws://" + window.location.host + "/status");
+
+	ws.onopen = function (e) {
+		console.log("The connection was setup successfully !");
+	};
+
+	ws.onmessage = function(e) {
+	const data = JSON.parse(e.data);
+	document.querySelector('#message').innerHTML = data.message;
+	document.querySelector('#accept').style.display = "block";
+    document.querySelector('#status').innerHTML = data.status;
+
+
+    };
+
+	document.querySelector('#accept').onclick = function(e) {
+            const rootMessage = "Ride Accepted"
+            ws.send(JSON.stringify({
+                message : rootMessage, status : "Accepted"
+            }));
+
+            console.log(rootMessage)
+        };
+
+    ws.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+</script>
+</body>
+</html>

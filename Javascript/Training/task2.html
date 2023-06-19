@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <title>Task 2</title>
+    </head>
+    <body>
+        <p id="text">You can show and hide me with this buttons.</p>
+        <button onclick="hideText()">Hide the text above.</button>
+        <button onclick="showText()">Show the text above.</button>
+
+        <script>
+            function hideText()
+            {
+                document.getElementById("text").style.display = "none";
+            }
+            function showText()
+            {
+                document.getElementById("text").style.display = "block";
+            }
+        </script>
+    </body>
+</hmtl>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <style>
+        a{
+            text-decoration : none;
+            color : white;
+        }
+        button
+        {
+            background-color : lightblue;
+            width : 200px;
+            height : 25px;
+            border-radius : 5px;
+        }
+    </style>
+</head>
+<body>
+
+{% if form.errors %}
+    <p>There is something error with what you entered. </p>
+{% endif %}
+
+{% if next %}
+    <p>Hey, you can't access that page.</p>
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+
+    <p>Username : {{ form.username }}</p>
+    <p>Password : {{ form.password }}</p>
+
+    <input type="submit"  value="login">
+
+    <button><a href="{% url 'forget-password' %}">Forgot Password</a></button>
+
+    <input type="hidden" name="next" value="{{ next }}">
+
+</form>
+</body>
+</html>

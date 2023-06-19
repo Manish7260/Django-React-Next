@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cookies Example</title>
+    </head>
+
+    <body>
+        Name : <input type="text" id="name"><br>
+        Email : <input type="mail" id="email"><br>
+        Course : <input type="text" id="course"><br>
+
+        <input type="button" value="Set Cookie" onclick="setCookie()">
+        <input type="button" value="Get Cookie" onclick="getCookie()">
+
+        <script>
+            function setCookie(){
+                var info ="Name = "+ document.getElementById("name").value+ "; Email = "+document.getElementById("email").value+ "; Course = "+document.getElementById("course").value;
+                document.cookie = info;
+            }
+
+            function getCookie()
+            {
+                if (document.cookie.lenght!=0){
+                    alert(document.cookie)
+                }
+                else{
+                    alert("Cookie Not Available")
+                }
+            }
+        </script>
+    </body>
+</html>

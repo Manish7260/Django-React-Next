@@ -1,0 +1,26 @@
+(Give this option only when user is logged in)
+changepassword = {
+        enter old password,
+        enter new password,
+        enter confirm password,
+        checkold password,
+        check new password and confirm password,
+        logout
+    }
+
+(Give this option onlywhen user is not logged in on login page)
+forgetpassword = {
+
+        input usename
+        generate otp
+        request otp from user
+        give two option new password and confirm password
+        check confirm password and new password should be same
+
+    }
+
+login = {
+
+        login check password is new or not
+
+    }

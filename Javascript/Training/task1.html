@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Task 1</title>
+    </head>
+    <style>
+        p{
+            color: darkorange;
+        }
+    </style>
+
+    <body>
+        <form>
+            <input type="text" oninput="displayText()" id="demo">
+        </form>
+       <b> <p id="data"></p></b>
+
+        <script>
+            function displayText()
+            {
+                document.getElementById("data").innerHTML=document.getElementById("demo").value;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script>
+            // Simple
+            var arr = [1,2,3,4,5]
+
+            for(i=0;i<arr.length;i++)
+            {
+                console.log(arr[i])
+            }
+
+            //create array using call array method 
+            var emp = new Array()
+            emp[0] = "Dhaval"
+            emp[1] = "Akhil"
+            emp[2] = "Kalu"
+
+            for(i=0;i<emp.length;i++)
+            {
+                document.write(emp[i] + "<br>")
+            }
+
+            document.write("<br>")
+
+            // create array with array constructor
+
+            var newemp = new Array("Jay","Vijay","Smith")
+
+
+            for(i=0;i<newemp.length;i++)
+            {
+                document.write(newemp[i]+ "<br>")
+            }
+
+            arr1 = [1,2,3,4]
+            arr2 = [5,6,7,8]
+            
+            // concatenet array using concat method and print it 
+
+            arr = arr1.concat(arr2)
+
+            console.log(arr)
+
+            // converting array to string 
+
+            const fruit = ["mango", "apple","banana"]
+
+            document.write("<br>")
+            document.write(fruit+"<br>")
+
+            document.write(fruit.toString() + "<br>")
+
+            // join array's element by given sign
+
+            document.write(fruit.join("*")+ "<br>")
+
+            // pop array element
+
+            fruit.pop()
+
+            document.write(fruit + "<br>")
+
+            // push in array
+
+            fruit.push("kiwi")
+
+            document.write(fruit + "<br>")
+
+            fruit.sort()
+            fruit.reverse()
+            console.log(fruit)
+
+
+            const myarr = [[1,2],[3,4],[5,6]]
+            const newarr = myarr.flat()
+            document.write(newarr)
+
+            
+
+
+        </script>
+    </body>
+</html>

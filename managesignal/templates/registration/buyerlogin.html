@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <style>
+        a{
+            text-decoration : none;
+            color : white;
+        }
+        button
+        {
+            background-color : lightblue;
+            width : 200px;
+            height : 25px;
+            border-radius : 5px;
+        }
+    </style>
+</head>
+<body>
+<h4>{{user.message}}</h4>
+<form method="post" action="{% url 'buyer-login' %}">
+    {% csrf_token %}
+
+    <table>
+        <tr>
+            <td>Email : </td>
+            <td><input type="email" name="username"></td>
+        </tr>
+        <tr>
+            <td>Password : </td>
+            <td><input type="password" name="password"></td>
+        </tr>
+    </table>
+    <input type="submit"  value="login">
+    {% comment %}
+    <button><a href="{% url 'forget-password' %}">Forgot Password</a></button>
+    {% endcomment %}
+    <input type="hidden" name="next" value="{{ next }}">
+
+</form>
+</body>
+</html>

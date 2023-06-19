@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+
+    <body>
+        Celsius : <input type="number" oninput="toFahrenhit()" id="celsius">
+        Fahrenhit : <input type="number" oninput="toCelsius()" id="fahrenhit">
+    </body>
+
+    <script>
+        function ParseFloat(str,val) {
+            str = str.toString();
+            str = str.slice(0, (str.indexOf(".")) + val + 1);
+            return Number(str);
+        }
+
+        function toCelsius()
+        {
+            let fahrenhit = document.getElementById("fahrenhit").value;
+            let celsius = (fahrenhit-32)/(9/5);
+            document.getElementById("celsius").value = ParseFloat(celsius,4);
+        }
+
+        function toFahrenhit()
+        {
+            let celsius = document.getElementById("celsius").value;
+            let fahrenhit = (celsius*(9/5))+32
+            document.getElementById("fahrenhit").value = ParseFloat(fahrenhit,4);
+        }
+        
+    </script>
+</html>

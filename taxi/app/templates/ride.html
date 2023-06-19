@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ride</title>
+</head>
+<body>
+
+<div>
+  <input type="radio" name="status"  value="0" checked>Accepted<br><br>
+  <input type="radio" name="status"  value="1"> DriveToPickup<br><br><!-- started -->
+  <input type="radio" name="status"  value="2"> DriveToDropOff<br><br><!--- In Progress -->
+  <input type="radio" name="status"  value="3"> CompleteTrip<br><br><!--- Trip Completed -->
+  <button id="update_status" onclick="displayRadioValue()">Update Status</button>
+</div>
+
+
+<script>
+
+   const ws= new WebSocket("ws://" + window.location.host + "/status");
+
+   var code=0
+
+   ws.onopen = function (e) {
+		console.log("The connection was setup successfully !");
+	};
+
+    function displayRadioValue() {
+        var ele = document.getElementsByName('status');
+
+        for(i = 0; i < ele.length; i++) {
+            if(ele[i].checked){
+            break;
+            }
+            code = code+1;
+        }
+
+        console.log(code)
+
+        if (code==0){
+            ws.send(JSON.stringify({
+                            message : "Accepted", status : "Accepted"
+                        }));
+        }
+        else if (code==1){
+         ws.send(JSON.stringify({
+                            message : "DriveToPickup", status : "Started"
+                        }));
+        }
+        else if(code==2)
+        {
+                    ws.send(JSON.stringify({
+                            message : "DriveToDropOff", status : "In Progress"
+                        }));
+        }
+        else if (code==3)
+        {
+                    ws.send(JSON.stringify({
+                            message : "Completed", status : "Trip Completed"
+                        }));
+        }
+        code=0
+    }
+
+    ws.onclose = function (e) {
+		console.log("The connection was closed unexpectedly");
+	};
+</script>
+</body>
+</html>

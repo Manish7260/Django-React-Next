@@ -1,0 +1,28 @@
+body{
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    outline: none;
+    background-color: blanchedalmond;
+    /* background-image: url("https://4kwallpapers.com/images/wallpapers/3d-background-texture-geometric-shapes-pattern-illustration-3840x2160-4549.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container{
+    width: 100%;
+    margin: 1em auto;   
+    background-color: aqua;
+}
+
+.grid{
+    display: grid;
+    /* margin-left: .5px; */
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 0.2em;
+    justify-content: center;
+}

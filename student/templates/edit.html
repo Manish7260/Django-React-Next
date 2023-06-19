@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student Result</title>
+    <style>
+        table{
+        border:1px solid grey;
+        border-spacing : 10px;
+        padding : 20px;
+        }
+    </style>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+     <h2 style="text-align:center"> Update Details of Student Result </h2>
+    <table align="center">
+        <tr>
+            <td>First Name : </td>
+            <td><input type="text" name="FirstName" placeholder="Firstname" value="{{students.FirstName}}" readonly></td>
+        </tr>
+
+        <tr>
+            <td>Last Name : </td>
+            <td><input type="text" name="LastName" placeholder="Lastname" value="{{students.LastName}}" readonly></td>
+        </tr>
+
+        <tr>
+            <td>Subject-1 : </td>
+            <td><input type="number" name="Sub1" placeholder="sub1-marks" value="{{students.Sub1}}"></td>
+        </tr>
+
+        <tr>
+            <td>Subject-2 : </td>
+            <td><input type="number" name="Sub2" placeholder="sub2-marks" value="{{students.Sub2}}"></td>
+        </tr>
+
+        <tr>
+            <td>Subject-3 : </td>
+            <td><input type="number" name="Sub3" placeholder="sub3-marks" value="{{students.Sub3}}"></td>
+        </tr>
+
+        <tr>
+            <td>Subject-4 : </td>
+            <td><input type="number" name="Sub4" placeholder="sub4-marks" value="{{students.Sub4}}"></td>
+        </tr>
+
+        <tr>
+            <td>Subject-5 : </td>
+            <td><input type="number" name="Sub5" placeholder="sub5-marks" value="{{students.Sub5}}"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

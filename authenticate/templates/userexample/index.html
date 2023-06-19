@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Index</title>
+
+    <style>
+        button a{
+            text-decoration : none;
+            color :red;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>This is a Welcome page.</h1>
+
+{% if user.is_authenticated %}
+
+    <p>Your name is : {{user.username}}</p>
+    <p>If you want to change Password then -> <a href="{% url 'change-password' %}">Click Here</a></p>
+    <button><a href="{% url 'logout-user' %}">Logout</a></button>
+
+{% else %}
+
+    <p>Your are not logged in-------> <a href="{% url 'login' %}">Go to login Page.</a></p>
+    <p>Register a new user-------> <a href="{% url 'register' %}">Register</a></p>
+    <p>Forgot Password-------> <a href="{% url 'forget-password' %}">Forgot Password.</a></p>
+
+{% endif %}
+
+</body>
+</html>

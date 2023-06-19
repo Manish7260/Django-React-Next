@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 9 Practice</title>
+        <style>
+             .demo
+            {   
+                padding: 30px;
+                background-color: black;
+                width: 240px;
+                height: 80px;
+                display: flex;
+                justify-content: space-between; 
+                align-items: center;
+                border-radius: 30px;
+                
+            }
+            .minus{
+                width: 70px;
+                height: 70px;
+            }
+            .plus{
+                width:70px;
+                height: 70px;
+                border-radius: 15px solid black;
+            }
+            .text
+            {
+                width: 70px;
+                color: white;
+                text-align: center;
+                font-size: 40px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <button onclick="myFunction()">New</button>
+
+        <div class="demo" id="original-div">
+            <button class="minus">-</button>
+            <p class="text" id="text">0</p>
+            <button class="plus">+</button>
+        </div>
+
+        <script>
+            var originalDiv = document.getElementById('original-div');
+            var clonedDivs = []
+
+            function myFunction()
+            {
+                var clonedDiv = originalDiv.cloneNode(true);
+                clonedDivs.push(clonedDiv);
+                document.body.appendChild(clonedDiv);
+
+                doSomethingWithDiv(clonedDiv);
+            }
+
+            function doSomethingWithDiv(div)
+            {
+                var increaseButton = document.getElementById("plus");
+                var decreaseButton = document.getElementById("minus");
+
+                increaseButton.addEventListener("click",function()
+                {
+                    console.log("Increase button clicked");
+                    increase(div);
+                });
+
+                decreaseButton.addEventListener("click",function()
+                {
+                    console.log("Decrease button clicked");
+                    decrease(div);
+                });
+            }
+
+            function increase(div)
+            {
+                var item = div.querySelector("p").innerHTML;
+                item = parseInt(item)+1;
+                div.querySelector("p").innerHTML = item;
+            }
+
+            function decrease(div)
+            {
+                var item = div.querySelector("p").innerHTML;
+                item = parseInt(item)-1;
+                div.querySelector("p").innerHTML = item;
+            }
+        </script>
+    </body>
+</html>

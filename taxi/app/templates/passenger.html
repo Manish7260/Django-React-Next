@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passenger</title>
+</head>
+<body>
+<p>Passenger</p>
+<h1>Passenger - Book Taxi</h1>
+
+<div>
+    <label>Enter your pickup location : </label>
+    <input type="text" placeholder="Pickup" id="pickup_location"><br>
+    <label>Enter your Destination location : </label>
+    <input type="text" placeholder="Destination" id="destination_location"><br>
+
+	<button type="submit" id="book_taxi">Book Taxi</button>
+</div>
+
+<div style="margin-top : 100px">
+    <table border="1px solid grey" >
+        <tr>
+            <td style="padding:5px;">Status</td>
+            <td style="padding:5px;"><p id="status">None</p></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+	const ws= new WebSocket("ws://" + window.location.host + "/status");
+
+	ws.onopen = function (e) {
+		console.log("The connection was setup successfully !");
+	};
+
+	ws.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#status').innerHTML = data.status;
+            console.log(data.status)
+        };
+
+	document.querySelector('#book_taxi').onclick = function(e) {
+            const messageInputFrom = document.querySelector('#pickup_location');
+            const messageInputTo = document.querySelector('#destination_location');
+            const rootMessage = messageInputFrom.value + " to " + messageInputTo.value;
+            ws.send(JSON.stringify({
+                message : rootMessage, status : "Requested"
+            }));
+
+            console.log(rootMessage)
+            messageInputFrom.value = '';
+            messageInputTo.value = '';
+        };
+
+        ws.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+</script>
+</body>
+</html>

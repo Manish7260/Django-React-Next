@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Fucntion Practice</title>
+    </head>
+    <body>
+        <script>
+            function emp(id, name, salary){
+                this.id = id;
+                this.name = name;
+                this.salary = salary;
+
+                this.changeSalary = changeSalary;
+
+                function changeSalary(othersalary)
+                {
+                    this.salary = othersalary
+                }
+            }
+
+
+            var e = new emp(1,"Manish",500)
+
+            console.log(e.id+" "+e.name+" "+" "+e.salary)
+
+            e.changeSalary(750)
+
+            console.log(e.id+" "+e.name+" "+" "+e.salary)
+
+        </script>
+    </body>
+</html>

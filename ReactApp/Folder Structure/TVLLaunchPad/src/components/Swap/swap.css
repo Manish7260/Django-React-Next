@@ -1,0 +1,43 @@
+.baseinputbox{
+    width: 97%;
+    border: 1px solid #fff;
+    padding: 7px;
+    border-radius: 12px;
+    color: #fff;
+}
+.baseinput{
+    border-left: 1px solid #fff;
+    padding: 7px;
+    color: #fff;
+}
+
+.searchinput{
+    border: 1px solid #fff;
+    border-radius: 41px;
+    padding: 7px;
+    color: #fff;
+}
+
+.model {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+
+.MuiInputBase-input {
+    color: #fff !important;
+    font-weight: 800;
+}
+.MuiInputBase-input .Mui-disabled{
+    color: #fff !important;
+    font-weight: 800;
+    -webkit-text-fill-color: #fff !important;
+}
+
+.MuiInputBase-root input {
+    color: #fff !important;
+    font-weight: 800;
+    -webkit-text-fill-color: #fff !important;
+}

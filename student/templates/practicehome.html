@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Employee Name : </td>
+            <td><input type="text" name="EmpName"></td>
+        </tr>
+        <tr>
+            <td>Employee Age : </td>
+            <td><input type="number" name="EmpAge"></td>
+        </tr>
+
+        <tr>
+            <td>Employee joining Date : </td>
+            <td><input type="date" name="EmpJoining"></td>
+        </tr>
+
+        <tr>
+            <td>Employee Designation : </td>
+            <td><select name="EmpDesignation">
+                <option value="CEO">CEO</option>
+                <option value="Manager">Manager</option>
+                <option value="Developer">Developer</option>
+                <option value="Helper">Helper</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Employee Email : </td>
+            <td><input type="email" name="EmpEmail"></td>
+        </tr>
+
+         <tr>
+            <td>Employee Profile : </td>
+            <td><input type="file" name="EmpProfile"></td>
+        </tr>
+
+         <tr>
+            <td>Employee Profile2 : </td>
+            <td><input type="file" name="EmpProfile2" accept="image/*"></td>
+        </tr>
+
+        <tr>
+            <td>Address : </td>
+            <td>
+                <textarea name="EmpAddress">
+
+                </textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit" name="submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
