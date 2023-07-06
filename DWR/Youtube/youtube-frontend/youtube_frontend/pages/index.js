@@ -12,6 +12,7 @@ function Home() {
       url: "https://nextjs.com"
     });
   }
+  
   return (
     <>
       <Layout>
